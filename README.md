@@ -4,6 +4,6 @@ In this challange, I will be implementing a small feature using JavaScript daily
 
 ## Projects made:
 
-| Project  | Live URL                                        |
-| -------- | ----------------------------------------------- |
-| Drum Kit | https://javascript30-ankur.netlify.app/drum-kit |
+| Project  | Live URL                                                                       |
+| -------- | ------------------------------------------------------------------------------ |
+| Drum Kit | https://main--javascript30-ankur.netlify.app/01%20-%20javascript%20drum%20kit/ |
