@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript 30 Index</title>
+    <style>
+      :root {
+        --border-color: gray;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+        color: #333;
+      }
+
+      .container {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 4.8rem 5.6rem;
+        font-size: 1.8rem;
+      }
+
+      .projects-table {
+        margin-top: 3.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px solid var(--border-color); */
+      }
+
+      .projects-row {
+        text-align: center;
+        padding: 1.6rem 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-inline: 2rem;
+        border-bottom: 2px solid gray;
+        border-left: 2px solid gray;
+        border-right: 2px solid gray;
+      }
+      .projects-row:first-child {
+        border-top: 2px solid var(--border-color);
+      }
+      .projects-row > *:not(:last-child) {
+        border-right: 2px solid var(--border-color);
+      }
+
+      .projects-row a {
+        color: #333;
+        text-decoration-skip-ink: all;
+      }
+
+      .projects-row a:hover {
+        color: orangered;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Projects' Links:</h1>
+      <div class="projects-links">
+        <ul class="projects-table">
+          <li class="projects-row">
+            <a
+              href="https://javascript30-ankur.netlify.app/drum-kit"
+              class="project-link"
+              >JavaScript Drum-Kit</a
+            >
+          </li>
+          <!-- <li class="projects-row">
+            <a href="/" class="project-link">Click to open live demo</a>
+          </li>
+          <li class="projects-row">
+            <a href="/" class="project-link">Click to open live demo</a>
+          </li> -->
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
