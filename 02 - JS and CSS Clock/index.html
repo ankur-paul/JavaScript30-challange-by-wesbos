@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>JS + CSS Clock</title>
     <link rel="icon" href="https://fav.farm/🔥" />
   </head>
@@ -82,6 +84,14 @@
 
       .second-hand {
         height: 3px;
+      }
+
+      @media (max-width: 500px) {
+        .clock {
+          width: 20rem;
+          height: 20rem;
+          margin: 10rem auto auto;
+        }
       }
     </style>
 
