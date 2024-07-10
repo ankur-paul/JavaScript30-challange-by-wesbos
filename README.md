@@ -8,3 +8,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | ---------------- | ------------------------------------------------------------------------------ |
 | Drum Kit         | https://main--javascript30-ankur.netlify.app/01%20-%20javascript%20drum%20kit/ |
 | JS and CSS Clock | https://main--javascript30-ankur.netlify.app/02%20-%20js%20and%20css%20clock/  |
+| CSS Variables    | https://javascript30-ankur.netlify.app/03%20-%20css%20variables/               |
