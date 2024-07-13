@@ -11,3 +11,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | CSS Variables      | https://javascript30-ankur.netlify.app/03%20-%20css%20variables/               |
 | Array Cardio Day 1 | https://javascript30-ankur.netlify.app/04%20-%20array%20cardio%20day%201/      |
 | Flex Panel Gallery | https://javascript30-ankur.netlify.app/05%20-%20Flex%20Panel%20Gallery/        |
+| Type Ahead         | https://javascript30-ankur.netlify.app/06%20-%20type%20ahead/                  |

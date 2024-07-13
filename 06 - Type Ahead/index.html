@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Type Ahead 👀</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <form class="search-form">
+      <input type="text" class="search" placeholder="City or State" />
+      <ul class="suggestions">
+        <li>Filter for a city</li>
+        <li>or a state</li>
+      </ul>
+    </form>
+    <script>
+      // const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+      const endpoint = "cities.json";
+
+      const cities = [];
+
+      const getCities = async function () {
+        const res = await fetch(endpoint);
+        const data = await res.json();
+        cities.push(...data.cities);
+      };
+
+      getCities();
+
+      // fetch(endpoint)
+      //   .then((res) => res.json())
+      //   .then((data) => cities.push(...data.cities));
+
+      // function findMatches(wordToMatch, cities) {
+      //   return cities.filter((place) => {
+      //     const regex = new RegExp(wordToMatch, "gi");
+      //     return place.City.match(regex);
+      //   });
+      // }
+
+      const findMatches = function (wordToMatch, cities) {
+        if (wordToMatch.length < 2) return [];
+        return cities.filter((place) => {
+          const regex = new RegExp(wordToMatch, "gi");
+          return (
+            place.City.match(regex) ||
+            place.State.match(regex) ||
+            place.District.match(regex)
+          );
+        });
+      };
+
+      const displayMatches = function () {
+        const matchArr = findMatches(this.value, cities);
+        const html = matchArr
+          .map((place) => {
+            const regex = new RegExp(this.value, "gi");
+            const cityName = place.City.replace(
+              regex,
+              `<span class="hl">${this.value}</span>`
+            );
+            const stateName = place.State.replace(
+              regex,
+              `<span class="hl">${this.value}</span>`
+            );
+            const districtName = place.District.replace(
+              regex,
+              `<span class="hl">${this.value}</span>`
+            );
+            return `
+            <li>
+            <span>${cityName}, ${districtName}, ${stateName}</span>
+            
+            </li>
+            `;
+          })
+          .join("");
+
+        suggestions.innerHTML = html;
+
+        // console.log(matchArr);
+      };
+
+      const input = document.querySelector(".search");
+      const suggestions = document.querySelector(".suggestions");
+      input.addEventListener("keyup", displayMatches);
+    </script>
+  </body>
+</html>
