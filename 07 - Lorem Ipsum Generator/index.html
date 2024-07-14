@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorem Ipsum</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        background: linear-gradient(#ebf4f5, #b5c6e0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      section {
+        max-width: 125rem;
+        min-height: 100svh;
+        padding-top: 6.4rem;
+        font-size: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 1.6rem;
+      }
+
+      h1 {
+        font-size: 6.4rem;
+        margin-bottom: 2rem;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+      }
+
+      input {
+        font-size: 1.6rem;
+        width: 19rem;
+        height: 3rem;
+      }
+
+      button {
+        font-size: 1.8rem;
+        background-color: transparent;
+        border-radius: 9px;
+        padding: 1.6rem 3.2rem;
+      }
+
+      button:hover {
+        background-color: #003049;
+        border-color: #040f14;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:active {
+        transform: scale(0.95);
+      }
+
+      @media (max-width: 500px) {
+        html {
+          font-size: 50%;
+        }
+
+        section {
+          padding-inline: 2.5rem;
+          align-items: flex-start;
+        }
+
+        h1 {
+          margin: 0 auto;
+        }
+
+        form {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          justify-content: center;
+          justify-items: center;
+          /* align-items: center; */
+        }
+
+        input {
+          width: 5rem;
+        }
+
+        button {
+          width: 70%;
+          grid-column: 1/-1;
+        }
+
+        /* button {
+          grid-column: 1 \-1;
+        } */
+      }
+
+      /* article {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      } */
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1 class="heading">Lorem Ipsum Generator</h1>
+      <form action="">
+        <label for="input--paragraphs">Paragraphs: </label>
+        <input
+          type="number"
+          name="input--paragraphs"
+          id="input--paragraphs"
+          placeholder="5"
+        />
+        <button type="submit">Generate</button>
+      </form>
+      <article class="lorem-text"></article>
+    </section>
+
+    <script>
+      const input = document.querySelector("input");
+      const form = document.querySelector("form");
+      const result = document.querySelector(".lorem-text");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const value = +input.value;
+        const resultArr = [];
+
+        for (let i = 0; i < value; i++) {
+          const random = Math.trunc(Math.random() * 10);
+          console.log(random);
+          resultArr.push(`<div class="lorem-para">${loremText[random]}</div>`);
+        }
+
+        const html = `
+        ${resultArr.join("<br/>")}
+        `;
+
+        result.innerHTML = html;
+      });
+
+      const loremText = [
+        "Lorem ipsum dolor sit amet. Sed dignissimos molestiae rem laborum velit est unde recusandae ea aliquid error qui quam autem aut dolore consequatur. Id vero incidunt quo doloribus doloremque cum illum fugit ut quaerat exercitationem in quis repellendus aut dolorem eligendi? Eum obcaecati nihil non velit aliquam ut Quis doloremque et autem autem est totam ipsum et doloremque placeat et unde incidunt. Et iste sapiente et quia galisum et praesentium consequatur non molestiae debitis aut numquam consequatur.\n",
+        "Vel quasi suscipit ea consequatur adipisci sed voluptatem quasi est tempore saepe et inventore omnis. Et modi iure aut galisum voluptatum in amet nostrum qui nihil distinctio vel nihil ipsum. Qui ipsum blanditiis ut porro facilis aut facilis odio ad distinctio veritatis. Qui veniam internos qui possimus velit et quod iure eos corrupti magnam\n",
+        "Non ipsa perferendis qui enim neque in dolorem quia. Non minima quis est dolorem molestiae nam accusantium voluptatem qui odit voluptas qui esse pariatur et animi soluta? In nobis explicabo sit voluptas voluptatem eum earum consequuntur qui temporibus dolorum et aliquam earum aut quidem praesentium qui consequuntur doloribus. Eos quidem quia et sequi reiciendis non omnis obcaecati qui repellendus dolore ut incidunt velit eos omnis mollitia. \n",
+        "Rem culpa ducimus ad dolore dignissimos hic voluptas galisum et commodi pariatur 33 neque tempore ut placeat temporibus quo dolorem debitis. Et eaque eaque quo ducimus distinctio cum perspiciatis tempora id tempore facere qui obcaecati facilis sed labore iusto? \n",
+        "Ut maiores rerum ad minima dolorem eum recusandae voluptatum nam fuga dolor est deleniti adipisci et modi minima. Est possimus dolorem aut quia tenetur nam enim doloribus est libero debitis qui sint voluptatem qui molestiae nihil. Et perferendis pariatur non excepturi possimus eos accusantium alias et laboriosam reprehenderit ea consequatur error. Aut nihil nisi non minima Quis ex perferendis Quis id omnis voluptas aut veniam amet.\n",
+        "Aut eveniet cumque qui velit natus qui inventore iure eos dicta corporis eos blanditiis magni ut unde modi. Quo mollitia alias a quasi dicta cum sapiente libero. Sed quia doloremque et quidem optio aut rerum ipsum. \n",
+        "Et quia fuga est eveniet autem ut sunt recusandae est voluptas aspernatur eum obcaecati asperiores ex omnis perspiciatis. Et dolore suscipit ea nesciunt itaque est officiis voluptatem qui enim illo aut doloribus illo ea tempore dolores. Id voluptatem eveniet sit mollitia rerum ea illum tempora est omnis voluptatem sit exercitationem voluptatem est velit adipisci ea molestias distinctio.\n",
+        "Non vero praesentium ex adipisci ipsam eum nulla officiis est adipisci rerum eos dolorem illum. 33 amet corrupti aut veritatis ipsa rem sequi omnis qui doloremque dolores et libero veritatis et odio rerum sit quaerat maxime.\n",
+        "Et possimus consequuntur qui enim dignissimos est omnis quia non consequuntur pariatur sed quos vitae sed distinctio minima! Aut maxime debitis et dolorem quia sed rerum consequuntur. Hic delectus illum aut voluptatem consectetur sed ipsam dolore.\n",
+        "Et possimus consequuntur qui enim dignissimos est omnis quia non consequuntur pariatur sed quos vitae sed distinctio minima! Aut maxime debitis et dolorem quia sed rerum consequuntur. Hic delectus illum aut voluptatem consectetur sed ipsam dolore.\n",
+      ];
+    </script>
+  </body>
+</html>
+
