@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 Canvas</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <div class="options">
+      <div class="btn btn-clear-all">Clear all</div>
+      <div class="btn btn-eraser">Eraser</div>
+      <div class="line-width-input">
+        <label for="input--range ">Line width</label>
+        <input
+          id="input--range"
+          class="input--range"
+          type="range"
+          min="1"
+          max="100"
+          value="50"
+          oninput="this.nextElementSibling.value = this.value"
+        />
+        <output>50</output>
+      </div>
+    </div>
+    <canvas id="draw" width="800" height="800"></canvas>
+    <style>
+      .options {
+        padding: 20px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+
+      .btn {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        font-weight: 700;
+        border: 2px solid #011222;
+
+        padding: 12px 24px;
+        border-radius: 9px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: scale(0.95);
+      }
+
+      .btn:active {
+        color: #fff;
+        background-color: #011222;
+      }
+
+      .active {
+        color: white;
+        background-color: #011222;
+      }
+
+      .line-width-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      output {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (max-width: 500px) {
+        .options {
+          /* width: 100%; */
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          justify-content: center;
+          align-items: center;
+          margin: 25px 10px 0;
+          padding: 0;
+          border-bottom: 1px solid rgba(128, 128, 128, 0.582);
+        }
+
+        .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .line-width-input {
+          grid-column: 1/-1;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+    <script>
+      const btnClearAll = document.querySelector(".btn-clear-all");
+      const btnEraser = document.querySelector(".btn-eraser");
+      const inptLineWidth = document.querySelector(".input--range");
+      const canvas = document.getElementById("draw");
+      const ctx = canvas.getContext("2d");
+
+      const resizeCanvas = function () {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        ctx.lineWidth = inptLineWidth.value;
+        ctx.strokeStyle = "#BADA55";
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+      };
+
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      let isDrawing = false;
+      let isErasing = false;
+      let lastX = 0;
+      let lastY = 0;
+      let hue = 0;
+
+      function getTouchPos(canvas, touchEvent) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: touchEvent.touches[0].clientX - rect.left,
+          y: touchEvent.touches[0].clientY - rect.top,
+        };
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+        ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(
+          e.offsetX || getTouchPos(canvas, e).x,
+          e.offsetY || getTouchPos(canvas, e).y
+        );
+        ctx.stroke();
+
+        [lastX, lastY] = [
+          e.offsetX || getTouchPos(canvas, e).x,
+          e.offsetY || getTouchPos(canvas, e).y,
+        ];
+        hue++;
+        if (hue > 360) {
+          hue = 0;
+        }
+      }
+
+      function erase(e) {
+        if (!isErasing) return;
+
+        ctx.clearRect(lastX, lastY, inptLineWidth.value, inptLineWidth.value);
+        [lastX, lastY] = [
+          e.offsetX || getTouchPos(canvas, e).x,
+          e.offsetY || getTouchPos(canvas, e).y,
+        ];
+      }
+
+      canvas.addEventListener("mousedown", (e) => {
+        if (btnEraser.classList.contains("active")) {
+          isErasing = true;
+        } else isDrawing = true;
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+        ctx.lineWidth = inptLineWidth.value;
+      });
+      canvas.addEventListener("mousemove", (e) => {
+        if (isDrawing) draw(e);
+        if (isErasing) erase(e);
+      });
+      canvas.addEventListener("mouseup", () => {
+        isDrawing = false;
+        isErasing = false;
+      });
+      canvas.addEventListener("mouseout", () => (isDrawing = false));
+
+      const clearAll = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        btnEraser.classList.remove("active");
+        isEaseing = false;
+      };
+
+      canvas.addEventListener("touchstart", (e) => {
+        if (btnEraser.classList.contains("active")) {
+          isErasing = true;
+        } else isDrawing = true;
+        const pos = getTouchPos(canvas, e);
+        [lastX, lastY] = [pos.x, pos.y];
+        ctx.lineWidth = inptLineWidth.value;
+        e.preventDefault();
+      });
+
+      canvas.addEventListener("touchmove", (e) => {
+        if (isDrawing) draw(e);
+        if (isErasing) erase(e);
+        e.preventDefault();
+      });
+
+      canvas.addEventListener("touchend", () => {
+        isDrawing = false;
+        isErasing = false;
+      });
+
+      btnClearAll.addEventListener("click", clearAll);
+      btnEraser.addEventListener("click", (e) => {
+        if (btnEraser.classList.contains("active")) {
+          btnEraser.classList.remove("active");
+          isErasing = false;
+          return;
+        }
+        btnEraser.classList.add("active");
+        erase(e);
+      });
+    </script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>
