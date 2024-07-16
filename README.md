@@ -13,4 +13,5 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 05  | Flex Panel Gallery    | https://javascript30-ankur.netlify.app/05%20-%20Flex%20Panel%20Gallery/        |
 | 06  | Type Ahead            | https://javascript30-ankur.netlify.app/06%20-%20type%20ahead/                  |
 | 07  | Lorem Ipsum Generator | https://javascript30-ankur.netlify.app/07%20-%20lorem%20ipsum%20generator/     |
-| 07  | Fun with HTML5 Canvas | https://javascript30-ankur.netlify.app/08%20-%20fun%20with%20html5%20canvas/   |
+| 08  | Fun with HTML5 Canvas | https://javascript30-ankur.netlify.app/08%20-%20fun%20with%20html5%20canvas/   |
+| 09  | Password Generator    | https://javascript30-ankur.netlify.app/08%20-%20password%20generator/          |

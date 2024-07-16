@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Password generator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+        font-size: 1.8rem;
+        color: #212529;
+        font-family: "inter", sans-serif;
+      }
+
+      section {
+        min-height: 100svh;
+        max-width: 70rem;
+        margin: 0 auto;
+        margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .heading {
+        font-size: 5.6rem;
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 40rem;
+        margin-bottom: 10rem;
+      }
+
+      .password-type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .password-type select {
+        width: 12rem;
+        height: 3rem;
+        font-size: 1.6rem;
+        border: 1px solid #212529;
+        border-radius: 5px;
+        background-color: transparent;
+      }
+
+      .password-length input {
+        width: 12rem;
+        height: 3rem;
+        font-size: inherit;
+        border: 1px solid #212529;
+        border-radius: 5px;
+        background-color: transparent;
+        padding: 1rem;
+      }
+
+      .password-length {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .special-characters {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .btn--submit {
+        font-size: inherit;
+        max-width: 16rem;
+        padding: 1.6rem 3.2rem;
+        margin: 0 auto;
+        background-color: transparent;
+        border: 2px solid #212529;
+
+        border-radius: 9px;
+      }
+
+      .btn--submit:hover {
+        color: #fff;
+        background-color: #212529;
+        cursor: pointer;
+      }
+
+      .btn--submit:active {
+        transform: scale(0.95);
+      }
+
+      .result {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .result-password {
+        width: 35rem;
+        height: 9.8rem;
+        font-size: 3.6rem;
+        background-color: #212529;
+        box-shadow: inset 0 0 0 2px white;
+        color: #fff;
+        border: 2px solid #212529;
+        border-radius: 9px;
+        padding: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .result-password::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+      }
+
+      .copy-icon {
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+      }
+
+      .copied {
+        font-size: 1.6rem;
+        margin-top: 10rem;
+        border: 2px solid #212529;
+        border-radius: 100px;
+        padding: 2rem;
+        transition: 1s;
+      }
+
+      .hidden {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      /* Checkbox */
+      .wrap-check-64 {
+        width: 12rem;
+      }
+      .wrap-check-64 .switch {
+        display: inline-block;
+        height: 29px;
+        position: relative;
+        width: 55px;
+      }
+
+      .wrap-check-64 .switch input {
+        display: none;
+      }
+
+      .wrap-check-64 .slider {
+        background-color: #66bb6a;
+        background-color: #ccc;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: 0.4s;
+      }
+
+      .wrap-check-64 .slider:before {
+        background-color: #fff;
+        bottom: 4px;
+        content: "";
+        height: 21px;
+        left: 4px;
+        position: absolute;
+        transition: 0.4s;
+        width: 21px;
+      }
+
+      .wrap-check-64 input:checked + .slider {
+        background-color: #ccc;
+        background-color: #66bb6a;
+      }
+
+      .wrap-check-64 input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      .wrap-check-64 .slider.round {
+        border-radius: 34px;
+      }
+
+      .wrap-check-64 .slider.round:before {
+        border-radius: 50%;
+      }
+
+      @media (max-width: 500px) {
+        html {
+          font-size: 50%;
+        }
+
+        form {
+          align-items: center;
+          padding-inline: 3.5rem;
+        }
+
+        form > * {
+          width: 100%;
+          justify-content: space-evenly;
+        }
+
+        .result-password {
+          width: 25rem;
+          height: 7rem;
+          font-size: 2.2rem;
+        }
+
+        .copied {
+          margin-top: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1 class="heading">Password Generator</h1>
+      <form class="form--password-type">
+        <!-- Password Type -->
+        <div class="password-type">
+          <label for="password-type">Password type:</label>
+          <select name="password-type" class="selection--password-type">
+            <option value="alphanumeric" selected>Alphanumeric</option>
+            <option value="numeric">Numeric</option>
+            <option value="alphabetical">Alphbetical</option>
+          </select>
+        </div>
+
+        <!-- Password Length -->
+        <div class="password-length">
+          <label for="password-length">Password length:</label>
+          <input
+            type="number"
+            name="password-length"
+            id="password-length"
+            placeholder="5"
+            class="input--password-length"
+          />
+        </div>
+
+        <!-- Special Characters or not -->
+        <div class="special-characters">
+          <p>special Characters?</p>
+          <div class="wrap-check-64">
+            <label class="switch" for="checkbox">
+              <input
+                type="checkbox"
+                id="checkbox"
+                class="checkbox--special-char"
+                checked
+              />
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn--submit">Generate</button>
+      </form>
+
+      <!-- Result -->
+      <div class="result">
+        <p class="result-password"></p>
+        <img
+          src="copy-outline.svg"
+          alt="copy-outline-svg"
+          class="copy-icon"
+          title="copy"
+        />
+      </div>
+
+      <p class="copied hidden">Password Copied!</p>
+    </section>
+
+    <script>
+      const passwordType = document.querySelector(".selection--password-type");
+      const passwordLength = document.querySelector(".input--password-length");
+      // prettier-ignore
+      const includeSpecialChar = document.querySelector(".checkbox--special-char");
+      const btnSubmit = document.querySelector(".btn--submit");
+      const copied = document.querySelector(".copied");
+      const copy = document.querySelector(".copy-icon");
+      const resultPassword = document.querySelector(".result-password");
+      let MODAL_TIME = 1000;
+
+      // Generate Password
+      const generatePassword = function (e) {
+        e.preventDefault();
+        let passwordSet = "";
+        if (passwordType.value === "alphanumeric") {
+          passwordSet =
+            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        } else if (passwordType.value === "numeric") {
+          passwordSet = "0123456789";
+        } else if (passwordType.value === "alphabetical") {
+          passwordSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+
+        if (includeSpecialChar.checked) {
+          passwordSet += "!@#$%^&*()-+./{}[]`~";
+        }
+
+        let password = "";
+
+        for (let i = 0; i < passwordLength.value; i++) {
+          const random = Math.trunc(Math.random() * passwordSet.length);
+          password += passwordSet[random];
+        }
+
+        if (!password) {
+          alert("Please enter the length of password!");
+          return;
+        }
+        resultPassword.textContent = password;
+      };
+
+      // Copy Password
+      const copyToClipboard = async function () {
+        try {
+          const password = resultPassword.textContent;
+          await navigator.clipboard.writeText(password);
+        } catch (err) {
+          console.log(err);
+          copied.textContent =
+            "Copying not allowed by your browser! Please manually copy the password";
+          MODAL_TIME = 5000;
+        } finally {
+          copied.classList.remove("hidden");
+
+          setTimeout(() => {
+            copied.classList.add("hidden");
+          }, MODAL_TIME);
+        }
+      };
+
+      btnSubmit.addEventListener("click", generatePassword);
+      copy.addEventListener("click", copyToClipboard);
+    </script>
+  </body>
+</html>
