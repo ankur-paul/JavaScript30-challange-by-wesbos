@@ -2,4 +2,4 @@
 
 | Project            | Live URL                                                              |
 | ------------------ | --------------------------------------------------------------------- |
-| Password Generator | https://javascript30-ankur.netlify.app/08%20-%20password%20generator/ |
+| Password Generator | https://javascript30-ankur.netlify.app/09%20-%20password%20generator/ |
