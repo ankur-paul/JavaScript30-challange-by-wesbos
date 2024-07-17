@@ -15,3 +15,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 07  | Lorem Ipsum Generator | https://javascript30-ankur.netlify.app/07%20-%20lorem%20ipsum%20generator/     |
 | 08  | Fun with HTML5 Canvas | https://javascript30-ankur.netlify.app/08%20-%20fun%20with%20html5%20canvas/   |
 | 09  | Password Generator    | https://javascript30-ankur.netlify.app/09%20-%20password%20generator/          |
+| 10  | Shift + check         | https://javascript30-ankur.netlify.app/10%20-%20shift%20+%20check/             |
