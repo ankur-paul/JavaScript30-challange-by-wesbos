@@ -1,4 +1,4 @@
-# Hold Shift and check checkboxes
+# Shift + check
 
 | Project       | Live URL                                                           |
 | ------------- | ------------------------------------------------------------------ |
