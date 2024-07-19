@@ -17,3 +17,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 09  | Password Generator    | https://javascript30-ankur.netlify.app/09%20-%20password%20generator/          |
 | 10  | Shift + check         | https://javascript30-ankur.netlify.app/10%20-%20shift%20+%20check/             |
 | 11  | Custom Video Player   | https://javascript30-ankur.netlify.app/11%20-%20custom%20video%20player/       |
+| 12  | Country Info          | https://javascript30-ankur.netlify.app/12%20-%20country%20info/                |
