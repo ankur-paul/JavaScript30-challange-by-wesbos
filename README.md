@@ -19,3 +19,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 11  | Custom Video Player   | https://javascript30-ankur.netlify.app/11%20-%20custom%20video%20player/       |
 | 12  | Country Info          | https://javascript30-ankur.netlify.app/12%20-%20country%20info/                |
 | 13  | Slide-in on scroll    | https://javascript30-ankur.netlify.app/13%20-%20slide%20in%20on%20scroll/      |
+| 14  | Color Flipper         | https://javascript30-ankur.netlify.app/14%20-%20color%20flipper/               |

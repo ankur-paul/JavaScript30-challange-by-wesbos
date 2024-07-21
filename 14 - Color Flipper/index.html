@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flipper</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+        font-family: system-ui;
+        color: #333;
+      }
+
+      body {
+        background-color: #edf6f9;
+      }
+      nav {
+        margin: 0 auto;
+        padding: 3.2rem;
+        box-shadow: 0 32px 64px 0px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #edf6f9;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 125rem;
+      }
+
+      h1 {
+        font-size: 4.8rem;
+      }
+
+      ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        font-size: 1.8rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      main {
+        width: 125rem;
+        margin: 0 auto;
+      }
+
+      .color-name {
+        width: 62rem;
+        height: 12rem;
+        border: 2px solid #333;
+        margin: 25.6rem auto 9.6rem;
+        background-color: #444;
+        color: #fff;
+        border-radius: 9px;
+        box-shadow: inset 0px 0px 0 2px #fff;
+        font-size: 6.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        display: block;
+        font-size: 3.2rem;
+        font-family: inherit;
+        padding: 1.6rem 3.2rem;
+        margin: 0 auto;
+        border: 2px solid #333;
+        border-radius: 9px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #333;
+        color: #fff;
+      }
+
+      button:active {
+        transform: scale(0.95);
+      }
+
+      @media (max-width: 500px) {
+        html {
+          font-size: 50%;
+        }
+
+        nav,
+        main {
+          width: 100svw;
+        }
+
+        .color-name {
+          width: auto;
+          height: auto;
+          padding: 1.6rem;
+          margin: 25.6rem 6.4rem 9.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <h1 class="logo">Color Flipper</h1>
+        <ul class="nav-links">
+          <li class="nav-link"><a href="index.html">Selected</a></li>
+          <li class="nav-link"><a href="random.html">Random</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="color-name">#edf6f9</div>
+      <button>Click Me!</button>
+    </main>
+
+    <script>
+      const colors = [
+        "8ecae6",
+        "023047",
+        "ffb703",
+        "fb8500",
+        "000000",
+        "14213d",
+        "283618",
+        "dda15e",
+        "772f1a",
+        "9a031e",
+        "006d77",
+        "83c5be",
+        "edf6f9",
+        "cdb4db",
+        "ffc8dd",
+        "bde0fe",
+        "0081a7",
+        "b392ac",
+      ];
+      const btn = document.querySelector("button");
+      const colorName = document.querySelector(".color-name");
+
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const random = Math.trunc(Math.random() * (colors.length - 1));
+        const randomColor = colors[random];
+
+        document.body.style.backgroundColor = `#${randomColor}`;
+        colorName.textContent = "#" + randomColor;
+      });
+    </script>
+  </body>
+</html>
