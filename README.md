@@ -22,3 +22,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 14  | Color Flipper         | https://javascript30-ankur.netlify.app/14%20-%20color%20flipper/               |
 | 15  | Local Storage         | https://javascript30-ankur.netlify.app/15%20-%20localstorage/                  |
 | 16  | Mouse Move Shadow     | https://javascript30-ankur.netlify.app/16%20-%20mouse%20move%20shadow/         |
+| 17  | Sort without articles | https://javascript30-ankur.netlify.app/17%20-%20sort%20without%20articles/     |
