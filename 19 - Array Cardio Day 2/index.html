@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array Cardio 💪💪</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+    <script>
+      // ## Array Cardio Day 2
+
+      const people = [
+        { name: "Wes", year: 1988 },
+        { name: "Kait", year: 1986 },
+        { name: "Irv", year: 1970 },
+        { name: "Lux", year: 2015 },
+      ];
+
+      const comments = [
+        { text: "Love this!", id: 523423 },
+        { text: "Super good", id: 823423 },
+        { text: "You are the best", id: 2039842 },
+        { text: "Ramen is my fav food ever", id: 123523 },
+        { text: "Nice Nice Nice!", id: 542328 },
+      ];
+
+      console.table(people);
+
+      // Some and Every Checks
+      // Array.prototype.some() // is at least one person 19 or older?
+      const date = new Date();
+      const currYear = date.getFullYear();
+
+      const isSomeone19_orOlder = people.some(
+        (guy) => currYear - guy.year >= 19
+      );
+      console.log("Atleast one guy is 19 year or older ?", isSomeone19_orOlder);
+
+      // Array.prototype.every() // is everyone 19 or older?
+      const isEveryone19_orOlder = people.every(
+        (guy) => currYear - guy.year >= 19
+      );
+      console.log(
+        "Evryone in the group is 19 or older? ",
+        isEveryone19_orOlder
+      );
+
+      // Array.prototype.find()
+      // Find is like filter, but instead returns just the one you are looking for
+      // find the comment with the ID of 823423
+
+      console.table(comments);
+      toFindID = 823423;
+      const cmnt = comments.find((Comment) => Comment.id === toFindID);
+      console.log("The comment with the id", toFindID, ":", cmnt.text);
+
+      // Array.prototype.findIndex()
+      const comntIndex = comments.findIndex(
+        (Comment) => Comment.id == toFindID
+      );
+      console.log(
+        "The index of the comment with id",
+        toFindID,
+        ":",
+        comntIndex
+      );
+
+      // Find the comment with this ID
+      // delete the comment with the ID of 823423
+      comments.splice(comntIndex, 1);
+      console.log("Deleted the comment with id", toFindID);
+      console.table(comments);
+    </script>
+  </body>
+</html>

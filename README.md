@@ -24,3 +24,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 16  | Mouse Move Shadow     | https://javascript30-ankur.netlify.app/16%20-%20mouse%20move%20shadow/         |
 | 17  | Sort without articles | https://javascript30-ankur.netlify.app/17%20-%20sort%20without%20articles/     |
 | 18  | Addition of time      | https://javascript30-ankur.netlify.app/18%20-%20addition%20of%20time/          |
+| 19  | Array Cardio Day 2    | https://javascript30-ankur.netlify.app/19%20-%20array%20cardio%20day%202/      |
