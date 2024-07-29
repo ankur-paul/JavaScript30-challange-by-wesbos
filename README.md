@@ -26,4 +26,5 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 18  | Addition of time              | https://javascript30-ankur.netlify.app/18%20-%20addition%20of%20time/                |
 | 19  | Array Cardio Day 2            | https://javascript30-ankur.netlify.app/19%20-%20array%20cardio%20day%202/            |
 | 20  | Follow along link highlighter | https://javascript30-ankur.netlify.app/20%20-%20follow%20along%20link%20highlighter/ |
-| 21  | Speecch Synthesis             | https://javascript30-ankur.netlify.app/20%20-%20speech%20synthesis/                  |
+| 21  | Speecch Synthesis             | https://javascript30-ankur.netlify.app/21%20-%20speech%20synthesis/                  |
+| 22  | Sticky Nav                    | https://javascript30-ankur.netlify.app/22%20-%20sticky%20nav/                        |
