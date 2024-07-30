@@ -28,3 +28,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 20  | Follow along link highlighter | https://javascript30-ankur.netlify.app/20%20-%20follow%20along%20link%20highlighter/ |
 | 21  | Speecch Synthesis             | https://javascript30-ankur.netlify.app/21%20-%20speech%20synthesis/                  |
 | 22  | Sticky Nav                    | https://javascript30-ankur.netlify.app/22%20-%20sticky%20nav/                        |
+| 23  | Event Capture                 | https://javascript30-ankur.netlify.app/23%20-%20event%20capture/                     |
