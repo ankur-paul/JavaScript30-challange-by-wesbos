@@ -29,3 +29,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 21  | Speecch Synthesis             | https://javascript30-ankur.netlify.app/21%20-%20speech%20synthesis/                  |
 | 22  | Sticky Nav                    | https://javascript30-ankur.netlify.app/22%20-%20sticky%20nav/                        |
 | 23  | Event Capture                 | https://javascript30-ankur.netlify.app/23%20-%20event%20capture/                     |
+| 24  | Click and Drag                | https://javascript30-ankur.netlify.app/24%20-%20click%20and%20drag/                  |
