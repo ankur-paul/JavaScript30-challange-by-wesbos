@@ -32,3 +32,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 24  | Click and Drag                | https://javascript30-ankur.netlify.app/24%20-%20click%20and%20drag/                  |
 | 25  | Follow Along Nav              | https://javascript30-ankur.netlify.app/25%20-%20follow%20along%20nav/                |
 | 26  | Video Speed Controller        | https://javascript30-ankur.netlify.app/26%20-%20video%20speed%20controller/          |
+| 27  | Countdown Timer               | https://javascript30-ankur.netlify.app/26%20-%20countdown%20timer/                   |
