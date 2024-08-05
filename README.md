@@ -34,3 +34,4 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 26  | Video Speed Controller        | https://javascript30-ankur.netlify.app/26%20-%20video%20speed%20controller/          |
 | 27  | Countdown Timer               | https://javascript30-ankur.netlify.app/27%20-%20countdown%20timer/                   |
 | 28  | Guess My Number               | https://javascript30-ankur.netlify.app/28%20-%20guess%20my%20number/                 |
+| 29  | Whack A Mole                  | https://javascript30-ankur.netlify.app/29%20-%20whack%20a%20mole/                    |
