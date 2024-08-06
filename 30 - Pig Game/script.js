@@ -89,7 +89,7 @@ btnHold.addEventListener("click", function () {
       scores[activePlayer];
 
     // Check if player won
-    if (scores[activePlayer] >= 2) {
+    if (scores[activePlayer] >= 25) {
       // Finish the game
       document
         .querySelector(`.player--${activePlayer}`)
