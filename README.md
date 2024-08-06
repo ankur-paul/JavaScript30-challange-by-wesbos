@@ -33,5 +33,6 @@ In this challange, I will be implementing a small feature using JavaScript daily
 | 25  | Follow Along Nav              | https://javascript30-ankur.netlify.app/25%20-%20follow%20along%20nav/                |
 | 26  | Video Speed Controller        | https://javascript30-ankur.netlify.app/26%20-%20video%20speed%20controller/          |
 | 27  | Countdown Timer               | https://javascript30-ankur.netlify.app/27%20-%20countdown%20timer/                   |
-| 28  | Guess My Number               | https://javascript30-ankur.netlify.app/28%20-%20guess%20my%20number/                 |
-| 29  | Whack A Mole                  | https://javascript30-ankur.netlify.app/29%20-%20whack%20a%20mole/                    |
+| 28  | Guess My Number (Game)        | https://javascript30-ankur.netlify.app/28%20-%20guess%20my%20number/                 |
+| 29  | Whack A Mole (Game)           | https://javascript30-ankur.netlify.app/29%20-%20whack%20a%20mole/                    |
+| 30  | Pig Game (Game)               | https://javascript30-ankur.netlify.app/30%20-%20pig%20game/                          |
